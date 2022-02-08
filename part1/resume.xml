@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="resume.xsl" type="text/xsl"?>
+
+<resume>
+	<header>
+		<name> Seyed Alireza Azimi </name>
+		<contact>
+			<email title="Email">
+				sazimi@ualberta.ca
+			</email>
+			<phone title="Phone">
+				587-778-1100
+			</phone>
+			<address title="Address">
+				5125 Riverbend Rd NW, Edmonton, AB
+			</address>
+		</contact>
+
+
+	</header>
+	<education title="Education">
+		<institution>
+			University of Alberta
+		</institution>
+		<level>
+			B Sc.
+		</level>
+		<field>
+			Software Engineering
+		</field>
+		<graduation>
+			2022
+		</graduation>
+	</education>
+	<experience title="Experience">
+		<item>
+			<workplace>
+				Intelliwave Technologies
+			</workplace>
+			<period>
+				May-Dec 2021
+			</period>
+			<tasklist>
+				<task>
+					Designed and implemented system health dashboard
+				</task>
+				<task>
+					Designed and implemented unit tests
+				</task>
+				<task>
+					Designed and implemented UI tests
+				</task>
+				<task>
+					Developed UI testing framework
+				</task>
+			</tasklist>
+		</item>
+		<item>
+			<workplace>
+				Telus Telecommunications
+			</workplace>
+			<period>
+				Jan-Aug 2020
+			</period>
+			<tasklist>
+				<task>
+					Designed and developed iOS application for inventory management
+				</task>
+				<task>
+					Developped web dashboard for inventory management
+				</task>
+				<task>
+					Designed and developed android application for inventory management
+				</task>
+				<task>
+					Created automated UI test suites 
+				</task>
+			</tasklist>
+		</item>
+		<item>
+			<workplace>
+				University of Alberta School of Business
+			</workplace>
+			<period>
+				May-Aug 2019
+			</period>
+			<tasklist>
+				<task>
+					Performed software maintenance of Apache2, Linux, MediaWiki, MySQL, and phpMyAdmin
+				</task>
+				<task>
+					Enhanced the user interface of the website landing page
+				</task>
+				<task>
+					Performed business analysis on, quantitative and qualitative, oil and gas data
+				</task>
+				<task>
+					Inserted and altered datasets on MySQL database
+				</task>
+				<task>
+					Created sitemap for improved web search results
+				</task>
+			</tasklist>
+		</item>
+
+	</experience>
+</resume>

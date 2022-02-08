@@ -1,0 +1,14 @@
+.banner{
+    background-color: aqua;
+    width:100%; /*match width of browser window*/    
+}
+
+.information-grid{
+    display: grid;
+    grid-template-columns: 45ch;    
+}
+.grid-row{
+    display: grid;
+    grid-template-columns: 15ch 30ch;  
+
+}
