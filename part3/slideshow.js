@@ -7,15 +7,15 @@ const playBtn = document.getElementById("playBtn");
 const showToggle = document.getElementById("showToggle");
 const transitionEffect = document.getElementById("transitionEffect");
 var transitionLoop;
+var interval;
 var alpha = 0,   /// current alpha value
-    delta = 0.005; /// delta = speed of fade
-    widthInterval = 0;
-    widthDelta = 20;
-    imageIndex = 0;
-    isPlaying = false;
-    timeout = 3000;
-    interval;
-    isRandom = false;
+    delta = 0.005, /// delta = speed of fade
+    widthInterval = 0,
+    widthDelta = 20,
+    imageIndex = 0,
+    isPlaying = false,
+    timeout = 3000,
+    isRandom = false,
     effect = "none";
 const images = [
     { path: "./images/screen1.png", caption: "screen-1" },

@@ -6,23 +6,33 @@
 			<head>
 				<meta charset="utf-8" />
 				<link rel="stylesheet" type="text/css" href="../shared/resume.css" />
-
+				<link rel="stylesheet" type="text/css" href="../shared/main.css" />
 			</head>
 			<body>
+				<div class="topnav">
+					<a href="../tma1.htm">Home</a>
+					<a class="active"  href="../part1/resume.xml">Resume</a>
+					<a href="../part2/tutorial.html">Tutorial</a>
+					<a href="../part3/slideshow.html">Slideshow</a>
+					<a href="../part4/utility.html">Utility</a>
+				</div>
 				<div class="information-header">
 					<h1 id="name">
 						<xsl:value-of select="resume/header/name" />
 					</h1>
 					<h3>
-						<xsl:value-of select="resume/header/contact/email/@title" />:
+						<xsl:value-of select="resume/header/contact/email/@title" />
+						:
 						<xsl:value-of select="resume/header/contact/email" />
 					</h3>
 					<h3>
-						<xsl:value-of select="resume/header/contact/phone/@title" />:
+						<xsl:value-of select="resume/header/contact/phone/@title" />
+						:
 						<xsl:value-of select="resume/header/contact/phone" />
 					</h3>
 					<h3>
-						<xsl:value-of select="resume/header/contact/address/@title" />:
+						<xsl:value-of select="resume/header/contact/address/@title" />
+						:
 						<xsl:value-of select="resume/header/contact/address" />
 					</h3>
 				</div>
