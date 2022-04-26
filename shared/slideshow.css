@@ -1,0 +1,152 @@
+.toggle-play-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 96px;
+    z-index: 2;
+    opacity: 1;
+    color: blanchedalmond;
+    opacity: 1;
+    cursor: pointer;
+
+}
+
+.play-pause-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.play-pause-container:hover {
+    opacity: 1;
+}
+
+.next-btn-container {
+    position: absolute;
+    padding: 0 10px;
+    left: 95%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    background-color: black;
+    cursor: pointer;
+}
+
+.next-btn-container:hover {
+    opacity: 0.5;
+}
+
+.next-image-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.previous-btn-container {
+    position: absolute;
+    padding: 0 10px;
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    background-color: black;
+    cursor: pointer;
+}
+
+.previous-btn-container:hover {
+    opacity: 0.5;
+}
+
+
+
+.previous-image-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.canvas-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 2%;
+    border-color: #2D4263;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+}
+
+.outer-container {
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+
+}
+
+.caption {
+
+    color: #ECDBBA;
+
+}
+
+.caption-container {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -90%);
+    text-align: center;
+    background-color: black;
+    opacity: 0.5;
+    width: 120px;
+    height: 30px;
+}
+
+.select-wrapper {
+    border-radius: 36px;
+    display: inline-block;
+    overflow: hidden;
+    background: #cccccc;
+    border: 1px solid #cccccc;
+    margin:5px;
+    padding:2px;
+}
+
+.select-box {
+    width: 250px;
+    height: 40px;
+    border: 0px;
+    background: #cccccc;
+    outline: none;
+}
+
+.controls {
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}

@@ -252,12 +252,13 @@ function handleToDoList() {
     calcArea.load("./ToDoList/todolist.html", () => {
         const listItems = $("#listItems");
         const item = $("#listItem");
-        const addBtn = $("#addItem");
+        const addItem = $("#addItem");
         const newListBtn = $("#newList");
-        addBtn.on('click', () => {
+        addItem.submit((e) => {
+            e.preventDefault()
             listItems.append(`
-            <div id="container-${todoIndex}">
-                <input type="checkbox" id="done-${todoIndex}"><span id="item-${todoIndex}">${item.val()}</span> <input id="delete-${todoIndex}" type="image" src="./images/delete-icon.png" />
+            <div class="list-item" id="container-${todoIndex}">
+                <input class="list-checkbox" type="checkbox" id="done-${todoIndex}"><span class="item-content" id="item-${todoIndex}">${item.val()}</span> <input class="delete-item" id="delete-${todoIndex}" type="image" src="./images/delete-icon.png" />
             </div>`);
             const itemSelect = $(`#done-${todoIndex}`);
             itemSelect.on('click', () => {

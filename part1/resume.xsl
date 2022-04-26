@@ -59,9 +59,9 @@
 
 				<hr />
 				<div class="experience">
-					<h2>
+					<h1>
 						<xsl:value-of select="resume/experience/@title" />
-					</h2>
+					</h1>
 					<xsl:for-each select="resume/experience/item">
 						<h3>
 							<xsl:value-of select="./workplace" />

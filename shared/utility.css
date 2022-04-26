@@ -1,3 +1,142 @@
-.calc-input{
-    display:block;
+.calc-input {
+    display: block;
+    margin: 10px auto;
+    width: 300px;
+    height: 25px;
+    border: 1px solid #666666;
+    border-radius: 25px;
+}
+.calc-input:focus{
+    outline: none;
+}
+
+.calculation-box {
+    text-align: center;   
+    height: 100%;
+}
+
+
+.input-item {
+    width: 300px;
+    height: 25px;
+    border: 1px solid #666666;
+    border-radius: 36px;
+}
+
+.input-item:focus{
+    outline: none;
+}
+
+.utility-container {
+    width: 600px;
+    height: 600px;
+    margin: 5% auto;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 36px;
+    padding: 5px;
+
+}
+
+.utility-button {
+    font-size: 15px;
+    font-family: Arial;
+    width: 110px;
+    height: 40px;
+    border-width: 1px;
+    color: #fff;
+    border-color: #84bbf3;
+    font-weight: bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    text-shadow: inset 0px 1px 0px #528ecc;
+    background: linear-gradient(#79bbff, #378de5);
+    margin: auto 2px;
+}
+
+.utility-button:hover {
+    background: linear-gradient(#378de5, #79bbff);
+}
+
+.utility-button[disabled] {
+    border: 1px solid #999999;
+    background: linear-gradient(#cccccc, #cccccc);
+    color: #666666;
+}
+
+
+
+.calculate-btn {
+    font-size: 15px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: #fff;
+    border-color: #3b6e22;
+    font-weight: bold;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: inset 0px 1px 0px 0px #9acc85;
+    background: linear-gradient(#74ad5a, #68a54b);
+    margin: 10px;
+}
+
+.calculate-btn:hover {
+    background: linear-gradient(#68a54b, #74ad5a);
+}
+
+.list-container {
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.list-item{
+    border: 1px solid #999999;
+    background-color: #ECDBBA;
+    border-radius: 36px;
+    width: 500px;
+    margin: 5px auto;
+    display: flex;
+    align-items: flex-start;
+    
+}
+
+.list-checkbox{
+    flex-basis:25px;
+    height:20px;
+}
+
+.item-content{
+    flex-basis: 450px;
+    text-align: left;
+    margin: auto;
+    color: #2D4263;
+}
+
+.delete-item{
+    flex-basis:25px;
+    padding:2px;
+    /* width:16px;
+    height:26px;
+    padding:2px; */
+}
+
+::-webkit-scrollbar{
+    opacity: 0;
+    width: 8px;
+    height:80%;
+    
+}
+
+
+::-webkit-scrollbar-thumb{
+    background-color: #666666;
+    border-radius: 20px;
+    height:80%;
 }

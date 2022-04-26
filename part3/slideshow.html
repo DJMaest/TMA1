@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../shared/slideshow.css">
     <link rel="stylesheet" href="../shared/main.css">
     <title>Part 3</title>
 </head>
@@ -17,37 +18,61 @@
         <a class="active" href="../part3/slideshow.html">Slideshow</a>
         <a href="../part4/utility.html">Utility</a>
     </div>
-    <div class="controls">
-        <button id="playBtn">
-            play
-        </button>
-        <button id="previousBtn">
-            previous
-        </button>
-        <button id="nextBtn">
-            next
-        </button>
-        <select id="showToggle">
-            <option value="sequential">Sequential</option>
-            <option value="random">Random</option>
-        </select>
 
-        <select id="transitionEffect">
-            <option value="none"> None </option>
-            <option value="fade"> Fade </option>
-            <option value="slide">Slide</option>
-        </select>
 
-    </div>
+    <div class="outer-container">
+        <h1>My Album</h1>
+        <div class="controls">
 
-    <div>
-        <span id="imageCaption"></span>
-        <canvas id="slideshowCanvas" width=700 height=500>
-        </canvas>
-        <script src="./slideshow.js" type="text/javascript"></script>
+            <div class="select-wrapper">
+                <select class="select-box" id="showToggle">
+                    <option value="" disabled selected>Select the order (default sequential)</option>
+                    <option value="sequential">Sequential</option>
+                    <option value="random">Random</option>
+                </select>
+            </div>
+
+
+            <div class="select-wrapper">
+                <select class="select-box" id="transitionEffect">
+                    <option value="" disabled selected>Select the transition style (default none)</option>
+                    <option value="none"> None </option>
+                    <option value="fade"> Fade </option>
+                    <option value="slide">Slide</option>
+                </select>
+            </div>
+
+
+        </div>
+        <div class="canvas-container">
+            <div class="caption-container">
+                <span class="caption" id="imageCaption"></span>
+            </div>
+
+            <div id="playBtn" class="play-pause-container">
+                <img src="../shared/icons/play.png"  alt="play-pause-button" class="toggle-play-btn">
+            </div>
+
+            <div id="nextBtn" class="next-btn-container">
+                <img src="../shared/icons/forward.png"  alt="play-pause-button" class="next-image-btn">
+            </div>
+
+            <div id="previousBtn"  class="previous-btn-container">
+                <img src="../shared/icons/backward.png" alt="play-pause-button"
+                    class="previous-image-btn">
+            </div>
+
+
+            <canvas id="slideshowCanvas" width=800 height=600>
+
+            </canvas>
+        </div>
+
+
     </div>
 
 
 </body>
+<script src="./slideshow.js" type="text/javascript"></script>
 
 </html>

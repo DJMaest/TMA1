@@ -3,7 +3,8 @@ const previousBtn = document.getElementById("previousBtn");
 const context = document.getElementById("slideshowCanvas").getContext("2d");
 context.imageSmoothingEnabled = true;
 const caption = document.getElementById("imageCaption");
-const playBtn = document.getElementById("playBtn");
+const playBtn= document.getElementById("playBtn");
+const playBtnContainer = document.getElementById("");
 const showToggle = document.getElementById("showToggle");
 const transitionEffect = document.getElementById("transitionEffect");
 var transitionLoop;
@@ -18,13 +19,13 @@ var alpha = 0,   /// current alpha value
     isRandom = false,
     effect = "none";
 const images = [
-    { path: "./images/screen1.png", caption: "screen-1" },
-    { path: "./images/screen2.png", caption: "screen-2" },
-    { path: "./images/screen3.png", caption: "screen-3" },
-    { path: "./images/screen4.png", caption: "screen-4" },
-    { path: "./images/screen5.png", caption: "screen-5" },
+    { path: "../shared/images/screen1.png", caption: "screen-1" },
+    { path: "../shared/images/screen2.png", caption: "screen-2" },
+    { path: "../shared/images/screen3.png", caption: "screen-3" },
+    { path: "../shared/images/screen4.png", caption: "screen-4" },
+    { path: "../shared/images/screen5.png", caption: "screen-5" },
 ];
-const { dWidth, dHeight } = { dWidth: 700, dHeight: 500 };
+const { dWidth, dHeight } = { dWidth: 800, dHeight: 600 };
 displayImage(); // display default image
 
 function setRandomIndex() {
@@ -162,8 +163,14 @@ previousBtn.addEventListener("click", () => {
     isPlaying && setDisplayInterval();
 });
 
+playBtn.addEventListener("mouseenter", ()=>{
+    document.getElementsByClassName("toggle-play-btn")[0].src = isPlaying? "../shared/icons/pause.png":"../shared/icons/play.png";
+});
+
 playBtn.addEventListener("click", () => {
     isPlaying = !isPlaying;
+    document.getElementsByClassName("toggle-play-btn")[0].src = isPlaying? "../shared/icons/pause.png":"../shared/icons/play.png";
+
     if (isPlaying) {
         setDisplayInterval();
     }
@@ -173,16 +180,19 @@ playBtn.addEventListener("click", () => {
 
 });
 
+
+
+
 showToggle.addEventListener("change", (e) => {
     const val = e.target.value;
     if (val === "random") {
-        nextBtn.disabled = true;
-        previousBtn.disabled = true;
+        nextBtn.style.display="none";
+        previousBtn.style.display="none";
         isRandom = true;
     } else {
         isRandom = false;
-        nextBtn.disabled = false;
-        previousBtn.disabled = false;
+        nextBtn.style.display="";
+        previousBtn.style.display="";
     }
 
 });
