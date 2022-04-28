@@ -1,12 +1,6 @@
-.information-grid {
-  display: grid;
-  grid-template-columns: 45ch;
-}
-
-.grid-row {
-  display: grid;
-  grid-template-columns: 15ch 30ch;
-
+.info-table{
+  margin: 10px auto;
+  font-size: 1.2em;
 }
 
 /* Add a black background color to the top navigation */
@@ -35,6 +29,10 @@
 .topnav a.active {
   background-color: #C84B31;
   color: white;
+}
+
+.heading{
+  text-align: center;
 }
 
 body {

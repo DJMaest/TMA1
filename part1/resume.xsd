@@ -1,64 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="resume">
-        <xs:complexType>
+  <xs:element name="resume">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header">
+          <xs:complexType>
             <xs:sequence>
-                <xs:element name="header">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="name" type="xs:string" />
-                            <xs:element name="contact">
-                                <xs:complexType >
-                                    <xs:sequence>
-                                        <xs:element name="email" type="xs:string" />
-                                        <xs:element name="phone" type="xs:string" />
-                                        <xs:element name="address" type="xs:string" />
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="education">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="institution" type="xs:string" />
-                            <xs:element name="level" type="xs:string" />
-                            <xs:element name="field" type="xs:string" />
-                            <xs:element name="graduation" type="xs:string" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="experience">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="item" minOccurs="1" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="workplace" type="xs:string" />
-                                        <xs:element name="period" type="xs:string" />
-                                        <xs:element name="tasklist">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="task" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-            
-            
-                                    </xs:sequence>
-    
-                                </xs:complexType>
-    
-    
-                            </xs:element>
-
-                        </xs:sequence>
-
-
-                    </xs:complexType>
-                </xs:element>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element name="contact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="email">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="title"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="phone">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="title"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="address">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="title"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="education">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="institution"/>
+              <xs:element type="xs:string" name="level"/>
+              <xs:element type="xs:string" name="field"/>
+              <xs:element type="xs:float" name="graduation"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="title"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="experience">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="item" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="workplace"/>
+                    <xs:element type="xs:string" name="period"/>
+                    <xs:element name="tasklist">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="task" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="title"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
