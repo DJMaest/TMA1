@@ -1,7 +1,29 @@
-const tutorialContainer = $("#tutorialContainer");
-const welcomeBtn = $("#welcomeBtn");
-const unit1Btn = $("#unit1Btn");
-const unit2Btn = $("#unit2Btn");
-const unit3Btn = $("#unit3Btn");
-tutorialContainer.append($('<div>').load('./tutorial-section/welcome.html'));
-welcomeBtn.attr("disabled", true);
+const tutorial = $("#tutorial");
+
+const navButtonArr = [
+    { codePath: './tutorial-sections/welcome.html', element: $("#welcomeBtn") },
+    { codePath: './tutorial-sections/unit1.html', element: $("#unit1Btn") },
+    { codePath: './tutorial-sections/unit2.html', element: $("#unit2Btn") },
+    { codePath: './tutorial-sections/unit3.html', element: $("#unit3Btn") }
+];
+tutorial.load('./tutorial-sections/welcome.html');
+
+
+navButtonArr.forEach(b => {
+    b.element.on("click", () => {
+        tutorial.load(b.codePath, ()=>{
+            return;
+        });
+        navButtonArr.forEach(btn => {
+            if (btn.element != b.element) {
+                btn.element.attr("disabled", false)
+            } else {
+                btn.element.attr("disabled", true)
+            }
+        })
+    })
+});
+
+
+
+

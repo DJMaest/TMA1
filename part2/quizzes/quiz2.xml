@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<quiz>
+	<quizTitle>Unit 2 Quiz</quizTitle>
+	<question>
+		<text>Javascript is a client side scripting language.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Semi-columns are necessary in Javascript.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>b</answer>
+	</question>
+	<question>
+		<text>What does the expression Math.floor(2.86) evaluate to?</text>
+		<a>3</a>
+		<b>0</b>
+		<c>2.9</c>
+		<d>2</d>
+		<answer>d</answer>
+	</question>
+	<question>
+		<text>What does the expression (87 == "87") evaluate to? </text>
+		<a>true</a>
+		<b>false</b>
+		<c>87</c>
+		<d>undefined</d>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Which of the following is a valid function definition?</text>
+		<a>function myFunc(){}</a>
+		<b>function()</b>
+		<c>(){}</c>
+		<d>myFunc{}</d>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Which of the following methods can be used to bind events to an element object?</text>
+		<a>addEventListener()</a>
+		<b>appendChild()</b>
+		<c>cloneNode()</c>
+		<d>focus()</d>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Consider we draw a rectangle using a canvas context object: context.fillRect(5,5,100,75). What is the position of the top left corner in terms of (x,y)?</text>
+		<a>(100,75)</a>
+		<b>(5,100)</b>
+		<c>(5,5)</c>
+		<d>(5,75)</d>
+		<answer>c</answer>
+	</question>
+</quiz>

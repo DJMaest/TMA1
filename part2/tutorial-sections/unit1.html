@@ -1,3 +1,332 @@
 <h1>Unit1: HTML and CSS</h1>
 
-<p>In this unit we will discuss the basics of structuring and designing webpages using HTML and CSS.</p>
+<p>
+    In this unit we will discuss the basics of structuring and designing webpages using HTML and CSS.
+    We also briefly touch on the fundamentals of the web.
+</p>
+
+<hr />
+
+
+
+<div class="content">
+    <h2>Fundamentals of the Web</h2>
+    <h3>Introduction</h3>
+    <p>
+        The internet and world wide web are an integral part of our lives. Most web applications are built using a
+        client-server architecture.<br />
+        A <b>Web Server</b> handles requests from a client. A <b>Web Client</b> sends requests to a destination web
+        server. <br />
+        A good example of a web client is the current web app you are using or any webpage! A good example of a web
+        server or servers is the collection of servers at google's data center. Furthermore, applications can become
+        multitier. Therefore,
+        they may have a client side, server side and database.
+    </p>
+    <h3>Hyper Text Transfer Protocol (HTTP)</h3>
+    <p>
+        HTTP is the communication protocol between the client side and the web server. Most notably we can see HTTP
+        appear in browser's URL section (e.g. http:// or https://). HTTP is used to transfer HTML, css and Javascript
+        files required to handle
+        and display webpages on the client side.
+        HTML defines the layout of the webpage. CSS defines the style of the webpage and modifies the layout to adhere
+        to
+        a desired look and feel. Javascript handles client side logic and events.
+    </p>
+
+    <h3>URI and URL</h3>
+    <p>
+        Universal resource identifiers (URI) are used to identify resources on the internet. A special case of these
+        URIs is called
+        a URL (Universal Resource Locator) that start with "http://" or "https://". URLs are used to make server-side requests that my involve searching and
+        database lookups.
+    </p>
+
+    <h3> Making and Receving Requests </h3>
+    <p>
+        The two most common types of HTTP requests are GET and POST requests. GET requests are commonly used to perform
+        search
+        queries are fetch web pages. For instance you can perform a google search using a GET request which appends the
+        search query
+        to the URL and performs the search (e.g. "www.google.com/search?q=deitel").
+        POST requests are commonly used to submit data to a server. This request is commonly used in web forms, where
+        our responses are saved
+        using POST requests. POST requests send the data as part of the HTTP message and not as part of the URL. It's
+        more suitable to handle
+        larger data.
+
+    </p>
+
+</div>
+<hr />
+
+<div class="content">
+
+    <h2>Hyper Text Markup Language (HTML)</h2>
+    <h3>Introduction</h3>
+    <p>
+        HTML and in particular HTML5, is a markup language that defines thre structure and content of Web
+        documents that are rendered in the browser. HTMl files end with a .htm or .html extension.
+    </p>
+    <h3>Simple Anatomy</h3>
+    <p>
+        Consider the following code snippet for HTML5. (Taken from the textbook)
+    </p>
+    <img style="transform: translate(50%, 0);" width="400px" height="300px"
+        src="../../shared/images/part2/html5-snippet.png" alt="html5-snippet" />
+    <p>
+        Line 1 indicates the document type which in this case would be HTML5.
+        The browser ignore blank or new lines in HTML5 and it's mainly for code readability.
+        Comments in HTML5 as you can see in lines 3 and 4, start with &lt;!-- and end with --&gt;.
+        In html we have opening tags (e.g. &lt;p&gt;) and closing tags (e.g. &lt;/ p&gt;).
+        Alternatively, there may be self closing tags (e.g. &lt;img /&gt;). Opening tags must
+        be complemented with a closing tag. <br />
+        Every html file should contain an <bold>html</bold>, <bold>head</bold> and <bold>body</bold> element.
+        In our example the html element starts at line 5 and ends at line 14. The head starts at line 6 and ends
+        at line 9. The body starts at line 11 and ends at line 13. <br />
+        the html element is essentially the root element of the html file. All other elements or tags
+        are its children. <br />
+        The head element contains information about the page such as the page title (line 8) and character set (line 7).
+        The head can also contain formatting instructions links such as link to a css file.
+        The body element contains all elements to be displayed on the webpage. For instance,
+        on line 12 we can see a paragraph element(&lt;p&gt;... &lt;/ p&gt;) inside the body element that is also
+        being rendered within the browser. You can also see the title being rendered on the browser tab as well.
+    </p>
+    <h3>Summary of HTML terminalogy</h3>
+    <ul>
+        <li>
+            <bold>html tag:</bold> html elements that can contain other elements (e.g. &lt;p&gt;... &lt;/ p&gt;)
+            or can be self closing (e.g. &lt;img /&gt;).
+        </li>
+        <li>
+            <bold>Child element:</bold> an html element that is contained inside another html element.
+        </li>
+        <li>
+            <bold>Tag attributes: </bold> Properties that can be set for an html tag. For example, in the image
+            tag &lt;img src="" alt="" /&gt; the properties src and alt are attributes of the tag. You can set these
+            properties to specify the source of and give an alternate text placeholder to an image.
+        </li>
+    </ul>
+
+    <h3>Note worthy elements</h3>
+    <ul>
+        <li>
+            <bold>Unordered List:</bold> Useful for creating bullet points. For example
+            you can make an unorder list of fruites using the &lt;ul&gt; tag containing
+            &lt;li&gt; tags (list items):<br />
+            &lt;ul&gt; <br />
+            &emsp;&lt;li&gt; Apple &lt;/ li&gt;<br />
+            &emsp;&lt;li&gt; Banana &lt;/ li&gt;<br />
+            &emsp;&lt;li&gt; Orange &lt;/ li&gt;<br />
+            &lt;/ ul&gt; <br />
+            Which will render the following:
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Orange</li>
+            </ul>
+
+        </li>
+        <li>
+            <bold>Paragraph:</bold> Useful for writing a large block of text.
+            starts with &lt;p&gt; and ends with &lt;/ p&gt;. These tags are highly used
+            throught out this project.
+        </li>
+        <li>
+            <bold>Images:</bold> This element is useful for rendering images on a webpage.
+            You can specify the source of the image, alternate text and dimensions. For example,<br />
+            &lt;img src="path/to/image" alt="some-image" width="200px" height="200px"/&gt;
+        </li>
+        <li>
+            <bold>Anchor tags:</bold> This element is useful for linking to other pages. For example, <br />
+            &lt;a href="../../part1/resume.xsl"&gt; resume &lt; /a&gt;, renders a link to my resume page:
+            <a href="../../part1/resume.xml"> resume </a>
+        </li>
+        <li>
+            <bold>Tables:</bold> This element is useful for displaying structured data onto a webpage.
+            For example, if I wanted to disable data related to a list of marks and names, I can use html table
+            to do so. The following table element illustrates an example:<br />
+            &lt;table border="1"&gt;<br />
+            &emsp;&lt;thead&gt;<br />
+            &emsp;&emsp;&lt;tr&gt;<br />
+            &emsp;&emsp;&emsp;&lt;th&gt;Name&lt;/ th&gt;<br />
+            &emsp;&emsp;&emsp;&lt;th&gt;Mark&lt;/ th&gt;<br />
+            &emsp;&emsp;&lt; /tr&gt;<br />
+            &emsp;&lt;/ thead&gt;<br />
+            &emsp;&lt;tbody&gt;<br />
+            &emsp;&emsp;&lt;tr&gt;<br />
+            &emsp;&emsp;&emsp;&lt;td&gt;Alireza Azimi&lt;/ td&gt;<br />
+            &emsp;&emsp;&emsp;&lt;td&gt;90&lt;/ td&gt;<br />
+            &emsp;&emsp;&lt; /tr&gt;<br />
+            &emsp;&emsp;&lt;tr&gt;<br />
+            &emsp;&emsp;&emsp;&lt;td&gt;John Doe&lt;/ td&gt;<br />
+            &emsp;&emsp;&emsp;&lt;td&gt;95&lt;/ td&gt;<br />
+            &emsp;&emsp;&lt; /tr&gt;<br />
+            &emsp;&lt;/ tbody&gt;<br />
+            &lt;/ table&gt;<br />
+            This will render the following table:
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Mark
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Alireza Azimi
+                        </td>
+                        <td>
+                            90
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            John Doe
+                        </td>
+                        <td>
+                            95
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </li>
+        <li>
+            <bold>Inputs:</bold> html inputs are abundant and very useful in collecting and processing
+            user inputs. For the purposes of this tutorial here are 6 inputs that I would like to mention:
+            <ul>
+                <li>
+                    <bold>Radio buttons:</bold> useful for designating an option.<br />
+                    e.g. &lt;input type="radio" name="fruit" &gt; Apple, which will render: <br />
+                    <input type="radio" name="fruite"> Apple <br />
+                </li>
+                <li>
+
+                    <bold>Checkbox:</bold> Useful for selecting multiple options.
+                    e.g. &lt;input type="checkbox" name="favoriteSingers" &gt; Freddie Mercury, which will render:
+                    <br />
+                    <input type="checkbox" name="favoriteSingers" id=""> Freddie Mercury <br />
+
+                </li>
+                <li>
+                    <bold>Textarea: </bold> Usefule for taking larger blocks of texts. <br />
+                    You can specify number of lines and columns as well.
+                    e.g. &lt;textarea name="feedback" cols="30" rows="5"&gt; Hello World! &lt;/textarea&gt;, which will
+                    render: <br />
+                    <textarea name="feedback" cols="30" rows="5"> Hello World!</textarea>
+                </li>
+                <li>
+                    <bold>Datetime picker:</bold> Useful for inputting dates.
+                    e.g. &lt;input type="date" name="birthday" &gt;, which will render: <br />
+                    <input type="date" name="birthday">
+                </li>
+                <li>
+                    <bold>Password:</bold> Useful for inputting password and hiding characters.<br />
+                    e.g. &lt;input type="date" name="accountPass" value="predefinedPass"&gt;, which will render: <br />
+                    <input type="password" name="accountPass" value="predefinedPass">
+
+                </li>
+                <li>
+                    <bold>Color palette:</bold> Useful for inputting colors to change themese for example.<br />
+                    e.g. &lt;input type="color" name="theme" &gt; Pick a color!, which will render: <br />
+                    <input type="color" name="theme"> Pick a color!
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>I would also like to invite you to take a look at w3schools' tutorial on input types: <a
+            href="https://www.w3schools.com/html/html_form_input_types.asp">input types</a></p>
+</div>
+<hr />
+
+<div class="content">
+    <h2>Cascaded Style Sheet (CSS)</h2>
+    <h3>Introduction</h3>
+    <p>
+        Cascading style sheets or commonly refered to as CSS, is a technology designed to alter
+        the presentation and appearance of an html layout. CSS can be applied using inline attributes or
+        using class attributes referencing css classes either defined in a &lt;style&gt; tag or a style sheet
+        file. You can use css classes or attributes to alter colors, shapes, format borders and much more.
+    </p>
+    <h3>Simple Anatomy</h3>
+    <ul>
+        <li>
+            <bold>Inline CSS: </bold> This type of CSS is defined using the style attribute.
+            e.g. consider this anchor tag, &lt;a style="color:green;text-decoration:none;" href="#"&gt; Green Link
+            &lt;/a&gt;. <br />
+            This element along with the style attribute render the following: <br />
+            <a style="color:green;text-decoration:none;" href="#">Green Link</a>
+            <br />
+            The css values are separated using semicolmns. The color attribute changes the font Color
+            and the text-decoration attribute set to none removes all text formatting which in this case
+            removes the default underline that appears in anchor tag links.
+        </li>
+        <li>
+            <bold>Infile and external CSS:</bold> The syntax for infile and external css is almost
+            identical. The only difference is, for infile, the css values are contained within a &lt;style&gt; tag
+            and for external the css is contained in a separate file and linked using a &lt;link&gt; tag. Here's an
+            example
+            of a link tag: &lt;link rel="stylesheet" href="style.css"/&gt;.
+            The following snippet of code illustrates how we can achieve the same green link from the previous
+            example using external or infile css.<br />
+
+            <code>
+                a{ <br/>
+                &emsp;&emsp;color: green;<br/>
+                &emsp;&emsp;text-decoration: none;<br/>
+                }<br/>
+            </code>
+            Over here the 'a' refers to anchor tags and thus it applies the following styles
+            in the curly braces to all anchor tags within the page. You can be more specific by specifying classes.
+            For example make a class called "green-anchor" and specify a style sheet with this class name:<br />
+            <code>
+                .green-anchor{ <br/>
+                &emsp;&emsp;color: green;<br/>
+                &emsp;&emsp;text-decoration: none;<br/>
+                }<br/>
+            </code>
+            Note how classes in css start with a period ".", and then the class name follows.
+            To apply this class to an element you can simply just use a class attribute.
+            e.g. <a class=".green-anchor" href="#">Green Link</a> will yield the same
+            green link we previously saw.
+        </li>
+
+    </ul>
+    <p>You can always learn more about css at w3schools: <a href="https://www.w3schools.com/css/">css</a></p>
+</div>
+
+<hr />
+
+<div class="content">
+    <h2>Summary</h2>
+    <p>
+        In this Unit we learned about the basics of the internet from the point of view of the web. We discussed what is
+        html, how it is structured and what uses does it have. We understood what are tags and what are child elements.
+        We also did a brief overview of common html elements and some interesting html inputs.
+        We took a look at cascaded style sheets and understood it's syntax and different formats.<br />
+        <bold>Congratulatins on finishing this Unit!</bold> When you are ready please take the quiz.
+
+    </p>
+</div>
+<hr />
+<button onclick="openDialog($('#myModal'), 'quiz1')" class="quiz-btn"> Take Quiz </button>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span onclick="closeDialog($('#myModal'))" class="close">&times;</span>
+        <div id="quizTitle"></div>
+        <h3 id="score"></h3>
+        <div class="scroll-container">
+            <div id="quizContent"></div>
+            <button class="tutorial-btn" onclick="handleQuizSubmission(this)" value="quiz1">Sumbit</button>
+        </div>
+
+    </div>
+
+</div>

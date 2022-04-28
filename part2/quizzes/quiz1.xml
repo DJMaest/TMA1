@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<quiz>
+	<quizTitle>Unit 1 Quiz</quizTitle>
+	<question>
+		<text>Multitier services consists of which of the following layers?</text>
+		<a>Database</a>
+		<b>Client</b>
+		<c>Server</c>
+		<d>All of the above</d>
+		<answer>d</answer>
+	</question>
+	<question>
+		<text>What does URI and URL stand for?</text>
+		<a>Universal Root Identifier, Universal Root Location</a>
+		<b>Union Resource Information, Union Resource Location</b>
+		<c>Universal Resource Identifier, Universal Resource Locator</c>
+		<d>None of the above</d>
+		<answer>c</answer>
+	</question>
+	<question>
+		<text>Which of the following is a common HTTP request?</text>
+		<a>GET</a>
+		<b>PUT</b>
+		<c>POST</c>
+		<d>a &amp; c</d>
+		<answer>d</answer>
+	</question>
+	<question>
+		<text>What do HTML stand for?</text>
+		<a>Hyper Text Markup Language </a>
+		<b>Horizantal Text Model Language</b>
+		<c>Hyper Transfer Markup Language</c>
+		<d>None of the above</d>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Which of the following is a closing HTML tag?</text>
+		<a>&lt; p &gt;</a>
+		<b>&lt; / p &gt;</b>
+		<c>&lt; html &gt;</c>
+		<d>&lt; h2 &gt;</d>
+		<answer>b</answer>
+	</question>
+	<question>
+		<text>What does CSS stand for?</text>
+		<a>Cascaded Style Surface</a>
+		<b>Cascaded Style Sheet</b>
+		<c>Clear Surface Sheet</c>
+		<d>Common Style Sheet</d>
+		<answer>b</answer>
+	</question>
+	<question>
+		<text>Using the style attribute is referred to as inline CSS.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>We want to style an anchor tag link so that it does not have an underline and it has a blue text. Which of the following inline CSS can achieve this?</text>
+		<a>style="color: green; text-decoration: none;"</a>
+		<b>style="color: red; text-decoration: dashed;"</b>
+		<c>style="color: blue; text-decoration: dashed;"</c>
+		<d>style="color: blue; text-decoration: none;"</d>
+		<answer>d</answer>
+	</question>
+</quiz>

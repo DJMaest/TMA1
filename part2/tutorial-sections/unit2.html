@@ -1,0 +1,178 @@
+<h1>Unit 2: Clientside Javascript</h1>
+
+<p>In this unit we will discuss the fundamentals of javascript as a client side side scripting language.</p>
+<hr />
+<div class="content">
+    <h2>Javscript</h2>
+    <h3>Introduction</h3>
+    <p>
+        Javascript is essentially the standard clientside scripting language. So far we have learned about html and css.
+        These technologies allow us to render
+        visually stunning layouts and pages. However, our pages still miss a key ingredient. They are all static and
+        lack the dynamic and responsive side. Our html and css pages
+        essentially can't "do something". The solution to making our pages dynamic and have the ability to handle
+        various inputs and events is Javascript. Javascript allows are pages to come to life and
+        be responsive in the sense of handling events and responding to inputs.
+    </p>
+    <h3>Features of Javascript</h3>
+    <ul>
+        <li>
+            <bold>Window object</bold>: Window object essentially gives us access to the browser window. We can use this
+            to reload a browser window or detect when a window has loaded using "window.onload()".
+            We can also display alert messages on the browser using for exampe, "window.alert("This is an alert!");".
+        </li>
+        <li>
+            <bold>DOM Manipulation</bold>: DOM stands for Document Object Model. Using javascript you can access the
+            document object. The document object is
+            an abstraction of a corrosponding rendered html document.
+            using dockument we can print out text using "document.writeline("Some String");" for example which prints
+            out the string to the body of the document.
+            We can also use dom objects in order to dynamically change their style. For instance, "domObject.style.color
+            = 'green'" is an illustration of what can be done.
+        </li>
+        <li>
+            <bold>Case sensitive</bold>: Variables and methods in javascript are case sensitive. This is common in other
+            programming languages as well.
+        </li>
+        <li>
+            <bold>Mathematical operations</bold>: Javascript supports multiple arithmetic operations such as +,-,/,*;
+            Other operations such as rounding down can also be performed using
+            the Math object. For example "Math.floor(1.43);".
+        </li>
+        <li>
+            <bold>Case sensitive</bold>: Variables and methods in javascript are case sensitive. This is common in other
+            programming languages as well.
+        </li>
+        <li>
+            <bold>String manipulation</bold>: Javascript supports string concatentaion and parsing. For instance,
+            you can concatenate two strings using the '+' operand. e.g. 'a' + 'b' will evaluate to 'ab'.
+        </li>
+        <li>
+            <bold>Logical operations: </bold> Javascript supports essentially all logical operators, encompassing, OR
+            (||), AND (&&), equal (==), not equal (!=), greater than (>), less than (&lt;), etc.
+        </li>
+        <li>
+            <bold>Loops: </bold> Javascript supports both while and for loops
+        </li>
+        <li>
+            <bold>Implicit types: </bold> In Javascript data types are determined implicitely and we mainly worry about
+            variable scope using "var" and "let"; and variable immutability using "const".
+        </li>
+
+    </ul>
+    <p>
+        <bold>Note:</bold> Javascript has two types of equal operator. Strict equal (===) and equal (==). Strict equal
+        is closer to what is seen other programming languages. Using normal equal (==) in javascript
+        should be considered with caution. For example "12" == 12 returns true even though one is a string and the other
+        is number.
+        <bold>Note:</bold> Semi-columns are not necessary in JavaScript.
+    </p>
+
+    <h3>Functions</h3>
+    <p>
+        Declaration of a function starts with the key word "function" followed by the function name, function parameters
+        in parenthesis and the function body wrapped in curly braces. The following figure
+        illustrates this format.<br />
+        <code>
+            function function-name(parameter-list)
+            {
+            &emsp;declarations and statements
+            }
+        </code>
+        Furthermore, there are also built in functions we can take advantage of. For instance using the built in math
+        object we can gegerate random numbers between 0 and 1 using
+        "Math.random();". We can round down using "Math.floor(number);". There are many useful built in functions and I
+        invite you to take a look at the
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Mozilla developer
+            docs</a> for this and more.
+    </p>
+    <h3>Handling Events</h3>
+    <p>
+        There are two way to approach this. We can use inline event handlers or external event handlers that are
+        referenced using script tags.
+        Inline events can be referenced using attributes such as "onclick="eventHandler()"". Here "eventHandler()" is
+        the name of the javascript function
+        that is called when the element is clicked.<br />
+        e.g. &lt;button onclick="handleClick()" &gt; Some button &lt;/ button&gt; calls handleClick(), where it can be
+        defined in a script tag or within a javascript file.<br />
+        <code>
+            function handleClick()
+            {
+            &emsp;window.alert("Clicked!");
+            }
+        </code>
+        For external event handlers, we need to use DOM extraction techniques to store DOM objects in javascript object
+        and attach an event handler to these objects.
+        For example, if our button has an id attribute, then we can use this id attribute to reference this element and
+        store it in a javascript object using a document query.<br />
+        e.g. &lt;button id="specialButton" &gt; Some button &lt;/ button&gt; <br />
+        We can handle click events with the following javascript snippet: <br />
+        <code>
+            const buttonObject = document.getElementById("specialButton");
+            buttonObject.addEventListener("click", ()=> {
+                &emsp;window.alert("Clicked!");
+            });
+        </code>
+
+    </p>
+
+
+</div>
+<hr />
+<div class="content">
+    <h2>Canvas HTML5</h2>
+    <h3>Introduction</h3>
+    <p>
+        Canvas is a widely supported html5 element that provides a javascript API with methods that can
+        be used to draw 2 dimensional graphics, manipulating images, and inserting videos and images.
+        In fact canvas is used in part 3 of this project to create an image slide show. Feel free to take a closer a
+        look at it!
+    </p>
+    <h3>Drawing With Canvas</h3>
+    <p>
+        Canvas uses a coordinate system where the x values refer to a horizontale distance from origin and y values
+        refer to vertical distance from origin. The following
+        figure (Taken from textbook) illustrates how canvas can be used to draw rectandles with different borders.
+    </p>
+    <img style="transform: translate(35%, 0);" width="500px" height="600px"
+        src="../../shared/images/part2/canvas-example.png" alt="canvas-example" />
+    <p>
+        As we can see here the canvas has been styled with a border of 1px, solid and black. Inside the canvas we have
+        drawn
+        The rectangle's top left corner is on coordinate (5px, 10px) and it has a width of 200px and height of 75px.
+        For more on canvas and it's awesome use cases I invite you to take a look at w3schools tutorials on it: <a
+            href="https://www.w3schools.com/html/html5_canvas.asp">canvas tutorial</a>
+    </p>
+
+</div>
+
+<hr />
+
+<div class="content">
+    <h2>Summary</h2>
+    <p>
+        In this section we learned about javascript and it's key features. We learned how to handle events such as
+        button clicks using javascript. Lasltly, we touched on the concept of canvas, which can be used
+        for 2d graphical illustrations and image representations. Canvas is alse used in this project for the slideshow
+        application. <br />
+        <bold>Congratulatins on finishing this Unit!</bold> When you are ready please take the quiz.
+    </p>
+</div>
+
+<hr />
+<button onclick="openDialog($('#myModal'), 'quiz2')" class="quiz-btn"> Take Quiz </button>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span onclick="closeDialog($('#myModal'))" class="close">&times;</span>
+        <div id="quizTitle"></div>
+        <h3 id="score"></h3>
+        <div class="scroll-container">
+            <div id="quizContent"></div>
+            <button class="tutorial-btn" onclick="handleQuizSubmission(this)" value="quiz2">Sumbit</button>
+        </div>
+
+    </div>
+
+</div>

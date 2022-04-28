@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<quiz>
+	<quizTitle>Unit 3 Quiz</quizTitle>
+	<question>
+		<text>XML is short for ... .</text>
+		<a>Extensible Markup Language</a>
+		<b>External Markup Lanuage</b>
+		<c>Event-driven Markup Language</c>
+		<d>External Management Language</d>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Every XML document must contain exactly one root element.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>XSD is used to validate the structure of an XML document.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>XSL is used define the layout of an XML document in the browser.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>Rich internet applications try to replicate the feeling and usability of desktop apps as much as possible.</text>
+		<a>True</a>
+		<b>False</b>
+		<answer>a</answer>
+	</question>
+	<question>
+		<text>What is AJAX short for?</text>
+		<a>Asynchronous Java and XML</a>
+		<b>Asynchronous Javascript and XML</b>
+		<c>Asymptotic Javascript and XML</c>
+		<d>None of the above</d>
+		<answer>b</answer>
+	</question>
+	<question>
+		<text>What is the status code for http success response?</text>
+		<a>500</a>
+		<b>404</b>
+		<c>200</c>
+		<d>300</d>
+		<answer>c</answer>
+	</question>
+</quiz>

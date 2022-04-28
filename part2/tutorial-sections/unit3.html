@@ -1,0 +1,149 @@
+<h1>Unit 3: AJAX and XML</h1>
+
+<p>
+    In this unit we cover the basics of XML and AJAX. We discuss what they are and when they are useful. We will
+    illustrate these technologies
+    using examples as well.
+</p>
+<hr />
+
+<div class="content">
+    <h2>XML</h2>
+    <h3>Introduction</h3>
+    The extensible markup language (XML) was developed by the W3C's xml working group. It is widely used an has become
+    the standard format for data exchanged between applications over
+    the internet.
+    <h3>Basic Anatomy</h3>
+    <p>
+        Consider the following snippet of an XML document, designed to describe a baseball player's information (Taken
+        from textbook).
+    </p>
+    <img style="transform: translate(35%, 0);" width="500px" height="300px"
+        src="../../shared/images/part2/xml-snippet.png" alt="canvas-example" />
+
+    <p>
+    <ul>
+        <li>
+            Line 1 declares the file to be an xml file
+        </li>
+        <li>
+            Lines 3 and 4 are comments which are identical to comments in html.
+        </li>
+        <li>
+            Text data is enclosed by start and end tags. For example lines 6 and 7. Every start tag must have a
+            corrosponding end tag.
+            e.g. &lt;firstName&gt; John &lt;/ firstName&gt;
+        </li>
+        <li>
+            An XML element may contain other XML elements and hence become more complex.
+        </li>
+        <li>
+            Every XML document must contain exactly one root element that contains all other elements.
+            Which is &lt;player&gt; in our example.
+        </li>
+    </ul>
+    </p>
+    <p>
+        XML docouments on its own are text files containing structured data.
+        They can be viewed in the browser without styling. Styling can also be added
+        using XSL (Extensible stylesheet language).
+    </p>
+
+
+
+    <h3>XML validation</h3>
+    <p>
+        XML documents may reference Document Type Definition (DTD) or a schema document (XSD)
+        to validate the structure of an XML document. Some parsers use the schema or DTD to ensure the XML document
+        follow a
+        desired and defined structure. An XML document that conforms to a schema or DTD is considered valid.
+    </p>
+    <h3>XSL</h3>
+    <p>
+        XSL (Extensible stylesheet language) tell the browser how to render and lay out the XML document.
+        XSL essentially maps XML values to html layout elements using xsl syntax. The following
+        snippet illustrates how xsl generates a web page for xml (sourced from textbook).
+
+    </p>
+    <img style="transform: translate(35%, 0);" width="500px" height="600px"
+        src="../../shared/images/part2/xsl-snippet.png" alt="canvas-example" />
+    <p>
+        As you can see the document is an xsl document. But, we can also make out the familiar html elements as well.
+        xsl also enables us to make use of templates. Templates can be designated to match the name of an element
+        or root of the document (line 10). We can also use the xsl:for-each element for generating repeating elements in
+        a document.<br />
+        To learn more about xml visit: <a href="https://www.w3schools.com/xml/">xml tutorial</a>
+    </p>
+
+</div>
+<hr />
+
+<div class="content">
+    <h2>AJAX</h2>
+    <h3>Introduction</h3>
+    <p>
+        Rich internet applications (RIAs) try to replicate the feeling and usability of desktop apps as much as
+        possible.
+        In order to make web apps more responsibe RIAs incorporate Asynchronous Javascript and XML (AJAX). AJAX calls
+        are asynchronous and therefore non-blocking.
+        They separate client-side user interface interaction from client server communications and emulate a parallel
+        run time environment. We can use AJAX calls
+        to make requests to servers and fetch their response using asynchronous callback functions. We can use these
+        callbacks to perform partial page updates and make our applications more
+        responsive and faster overall. The partial page updates help us to reduce the amount of page reloads as well.
+    </p>
+    <h3>Using AJAX</h3>
+    To begin using AJAX we must make use of the XMLHttpRequest object. We can use this object to perform
+    a send request operation. Using the method "send()" we can make requests to a server for example.
+    We can use an event handler called "onreadystatechange" to detect when a response has been received from the server.
+    We can check the status of the response using the "status" attribute which is 200 for a success response.
+    The following code snippet illustrates how we can make a simple get request to a server using XMLHttpRequest:<br />
+    <code>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() { 
+        &emsp;if (this.readyState == 4 && this.status == 200) {
+        &emsp;&emsp;document.getElementById("someId").innerHTML = xhttp.responseText;
+        &emsp;}
+        };
+        xhttp.open("GET", "server-url", true); 
+        xhttp.send();
+    </code>
+
+    <p>Note that "this.readState == 4" indicates the request has been fulfilled.</p>
+    <p>
+        It's also worth mentioning that the jQuery library provides very useful wrappers for the AJAX APIs
+        that greatly simplify the development process for adding AJAX features to a webb application.
+        Lastly to learn more about AJAX, visit: <a href="https://www.w3schools.com/js/js_ajax_http.asp">AJAX
+            Tutorial</a>
+    </p>
+</div>
+<hr />
+
+<div class="content">
+    <h2>Summary</h2>
+    <p>
+        In this section we learned about xml, how to validate it's structure using xsd or DTD and how to style and
+        present it using XSL.
+        We discussed the importance and usefulness of xml in modern web applications. Finally, we also went over AJAX.
+        We discussed it's importance and use cases along with looking at
+        simple examples of how we can use AJAX methods to make our applications more responsive. <br />
+        <bold>Congratulatins on finishing this Unit!</bold> When you are ready please take the quiz.
+    </p>
+</div>
+<hr />
+<button onclick="openDialog($('#myModal'), 'quiz3')" class="quiz-btn"> Take Quiz </button>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span onclick="closeDialog($('#myModal'))" class="close">&times;</span>
+		<div id="quizTitle"></div>
+        <h3 id="score"></h3>
+        <div class="scroll-container">
+            <div id="quizContent"></div>
+            <button class="tutorial-btn" onclick="handleQuizSubmission(this)" value="quiz3">Sumbit</button>
+        </div>
+
+    </div>
+
+</div>
