@@ -56,43 +56,512 @@
       </tbody>
     </table>
   </div>
-  <div>
-    <hr>
-    <h1>Part 1: XML Resume</h1>
-    <h3>Description and Requirements</h3>
-    <p>
-      In this part I modeled the data contained within my resume in XML format. I furthermore accompanied the xml 
-    </p>
-    <h3>Analysis and Design</h3>
-    <h3>User Guide</h3>
-    <h3>Access application</h3>
-    <p>
-      You can access the application from the top navigation bar as well.<br/>
-      <a href="part1/resume.xml">Resume</a>
-    </p>
-    <hr>
-    <h1>Part 2: Tutorial Application</h1>
-    <h3>Description and Requirements</h3>
-    <h3>Analysis and Design</h3>
-    <h3>User Guide</h3>
-    <h3>Access application</h3>
-    <hr>
-    <h1>Part 3: Slideshow Application</h1>
-    <h3>Description and Requirements</h3>
-    <h3>Analysis and Design</h3>
-    <h3>User Guide</h3>
-    <h3>Access application</h3>
-    <hr>
-    <h1>Part 4: Utility Application</h1>
-    <h3>Description and Requirements</h3>
-    <h3>Analysis and Design</h3>
-    <h3>User Guide</h3>
-    <h3>Access application</h3>
+  <hr>
 
+  <div class="documentation">
+    <h1>General User Guide</h1>
+    Please ensure you have the latest version of python 3 is installed on your device. You can take a look at <a
+      href="https://realpython.com/installing-python/">Installing python</a>.
+    Please use the python simple http server to run and interact with the web application. Run the following command
+    within the assignment folder (TMA1/).<br>
+    <code>
+      python -m http.server 8000
+    </code> <br />
+    This will run the server on port 8000. This is to ensure files such as the xml is displayed by a server to prevent
+    possible security issues with some browsers. Furthermore, you can use this server to view the other files as well.
+    Afterwards, you may access the landing page through localhost using the link: <a
+      href="http://localhost:8000/tma1.htm"> Landing
+      Page</a> <br>
+    Ensure the server is running when you click on the link!
+    <br>
+    Please use Chrome as the web browser to test the applications.
 
   </div>
 
+  <hr>
+  
+  <div class="documentation">
+
+    <h1>Part 1: XML Resume</h1>
+    <h3>Description and Requirements</h3>
+    <p>
+      In this part I modeled the data contained within my resume in XML format. I furthermore accompanied the xml with
+      an xsd file to validate the structure. Lastly I used the xsl file to neatly display the information contained
+      within
+      the xml file.
+      The breakdown of the requirements are as follows:<br />
+    <ul>
+      <li>
+        Create an XML file containing my resume data. The data should be organized into three sections relating to basic
+        info, education background and work experience.
+      </li>
+      <li>
+        Create an XSD file to validate the structure of the XML file.
+      </li>
+      <li>
+        Create XSL file to display the XML content onto a browser. Giving it the feel and appearance of an online
+        resume.
+      </li>
+    </ul>
+    </p>
+    <h3>Analysis and Design</h3>
+    <p>
+      In order to analyze and breakdown the information I needed to present on my XML document, I created the following
+      XML tree diagram (Fig1):<br />
+    <div class="figure">
+      <img style="margin:10px auto;" src="shared/images/part1/assignment1-xml-tree-resume.png" alt="tree-diagram-xml"
+        width="100%">
+      <span>Fig1: XML tree diagram for part1</span>
+    </div>
+    <br />
+    According to this diagram I begun to model my resume information into the appropriate elements. As it can be seen
+    some elements such as work tasks and work experience have a repeating designation. Since,
+    I have multiple work experiences. And in each experience I performed several tasks. Later on during development I
+    added attributes to some elements for higher fidelity and practicality. These attributes were
+    used later to display information such as headers when constructing the xsl.
+    </p>
+    <h3>Implementation</h3>
+    <p>
+      Three files are provided in the part1/ directory. resume.xml contains the xml implementation. resume.xsd is the
+      schema used for validation. resume.xsl is the style sheet used to format the appearance of the xml data onto the
+      browser. <br />
+      In resume.xml I being by defining the root as the tag &lt;resume&gt;, then all subsequent elements are nested
+      within resume. The structure
+      of the xml document has been previously shown in the xml tree. I created an xsd document according to the
+      structure of the xml document.
+      For example, consider the following:
+      <code>
+        &lt;xs:element name="email"&gt;
+        &emsp;&lt;xs:complexType&gt;
+        &emsp;&emsp;&lt;xs:simpleContent&gt;
+        &emsp;&emsp;&emsp;&lt;xs:extension base="xs:string"&gt;
+        &emsp;&emsp;&emsp;&emsp;&lt;xs:attribute type="xs:string" name="title"/&gt;
+        &emsp;&emsp;&emsp;&lt;/xs:extension&gt;
+        &emsp;&emsp;&lt;/xs:simpleContent&gt;
+        &emsp;&lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+      </code>
+
+      This is the defined schema for the email element. As you can see I have defined schema to contain a string based
+      element along with a string based attribute.
+      Lastly, I created the xsl document to define the layout of the xml document as it is displayed on the browser. I
+      used value selectors to extract the value of certain elements by providing the currect path to finding the element
+      in the xml tree. Furthermore, I used "xsl:for-each" elements to handle repeating xml elements such as the work
+      tasks.
+      You can view the full implementation in the corrosponding files provided in the part1/ directory of the project.
+    </p>
+
+    <h3>User Guide</h3>
+    <p>
+
+      To view the resume page, you may use the top navigation bar or the access link provided bellow. For additional
+      implementation details, you may look at the source code which has been provided according to the project directory
+      structure detailed in the assignment description.
+      The source code for the resume may be accessed within the directory "part1/" of the assignment folder. <br>
+      To verify the XML file against the XSD file you can use this website: <a
+        href="https://www.freeformatter.com/xml-validator-xsd.html">Validator</a>
+    </p>
+
+    <h3>Access application</h3>
+    <p>
+      You can access the application from the top navigation bar as well.<br />
+      <a href="part1/resume.xml">Resume</a>
+    </p>
+
+  </div>
+  <hr>
+  <div class="documentation">
+    <h1>Part 2: Tutorial Application</h1>
+    <h3>Description and Requirements</h3>
+    In this part I created a web application that would teach about three fundamental topics of web development. These
+    tutorials were inspired by unit1, unit2 and unit3 of the course. unit1 covers topics on css and html. unit2 covers
+    javascript and canvas.
+    unit3 covers xml and AJAX. I also included a quiz for each section to test the user's understandin. The requirements
+    are as follows:
+    <ul>
+      <li>
+        Create a web application that can display tutorials and take quizzes.
+      </li>
+      <li>
+        Make a tutorial on HTML and css (unit1).
+      </li>
+      <li>
+        Make a tutorial on Javascript and canvas (unit2).
+      </li>
+      <li>
+        Make a tutorial on XML and AJAX (unit3).
+      </li>
+      <li>
+        Make quiz for unit 1.
+      </li>
+      <li>
+        Make quiz for unit 2.
+      </li>
+      <li>
+        Make quiz for unit 3.
+      </li>
+      <li>
+        Quizzes should be easily expandible, editable and removable.
+      </li>
+
+    </ul>
+    <h3>Analysis and Design</h3>
+    <p>
+      I began my design process by understanding and defining the general look and layout of my application. To aid with
+      this process I constructed a basic wireframe of the tutorial web application (Fig2).
+    <div class="figure">
+      <img style="margin:10px auto;" src="shared/images/part1/assignment1-wireframe-tutorial-app.png"
+        alt="tree-diagram-xml" width="50%">
+      <span>Fig2: Wireframe for tutorial application</span>
+    </div>
+    Essentially, the content of the tutorials are wrapped inside a neatly designed box. There are top navigation buttons
+    to handle the transition between different tutorials. As for the quizzes, I decided to display them inside the
+    dialog box.
+    In order to make the quiz system compliant with the requirements of being expandible, editable and removable, I
+    decided to model the quiz data using XML.
+    The following XML tree was created to design the quiz structure (Fig3).
+    <div class="figure">
+      <img style="margin:10px auto;" src="shared/images/part1/assignment1-quiz-xml-tree.png" alt="quiz-tree-diagram-xml"
+        width="80%">
+      <span>Fig3: XML tree diagram for tutorial quizzes</span>
+    </div>
+    I modeled my quiz answers under the assumption of a multiple choice style quiz. Sometimes I would ommit two choices
+    to make a true/false question.
+    Once the design phase relating to layouts and quiz data was done, I proceeded to select the topics for each unit.
+    Essentially I designed my tutorials to cover the following topics:
+    <ul>
+      <li>
+        Unit 1:
+        <ul>
+          <li>Web fundamentals:
+            <ul>
+              <li>
+                Introduction
+              </li>
+              <li>
+                HTTP
+              </li>
+              <li>
+                URI and URL
+              </li>
+              <li>
+                Web Requests
+              </li>
+            </ul>
+          </li>
+          <li>
+            HTML:
+            <ul>
+              <li>
+                Introduction
+              </li>
+              <li>
+                Anatomy
+              </li>
+              <li>
+                Terminology
+              </li>
+              <li>
+                Elements
+              </li>
+            </ul>
+          </li>
+          <li>
+            CSS:
+            <ul>
+              <li>
+                Intro
+              </li>
+              <li>
+                Anatomy
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+      <li>
+        Unit 2:
+        <ul>
+          <li>Javascript:
+            <ul>
+              <li>
+                Introduction
+              </li>
+              <li>
+                Features
+              </li>
+              <li>
+                Functions
+              </li>
+              <li>
+                Events
+              </li>
+            </ul>
+          </li>
+          <li>
+            Canvas:
+            <ul>
+              <li>
+                Introduction
+              </li>
+              <li>
+                Drawing basics
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Unit 3:
+        <ul>
+          <li>XML:
+            <ul>
+              <li>
+                Introduction
+              </li>
+              <li>
+                Anatomy
+              </li>
+              <li>
+                Validating
+              </li>
+              <li>
+                XSL
+              </li>
+            </ul>
+          </li>
+          <li>
+            AJAX:
+            <ul>
+              <li>
+                Introduction
+              </li>
+              <li>
+                Usage
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    </p>
+
+
+    <h3>Implementation</h3>
+    <p>
+      I used the AJAX to load different tutorial layouts into the already loaded page. This was to save load time and to
+      make the app feel more snappy. I followed my designs and implemented my css and html elements in order mimic the
+      layout proposed in the wireframe. using the css border field I managed to create the outline and using
+      border-radius I rounded the edges.
+      I created three javascript files. One to handle the loading of the tutorials and switching between tutorials
+      (tutorial.js), one to open the quiz dialog (dialogHandler.js) and one to parse the quiz xml files and load them
+      onto the dialog box (quizHandler.js). In quizHandler.js I created methods to scan through the responses once the
+      submit button is pressed. I would then aggregate the number of correct responses and divide it by the number of
+      questions and display this to the user as the result.
+
+    </p>
+
+    <h3>User Guide</h3>
+    <p>
+      For additional implementation details, you may look at the source code which has been provided according to the
+      project directory layout requirements detailed in the assignment.
+      The source code for the tutorial may be accessed within the directory "part2/" of the assignment folder. <br>
+      To add quiz questions, you may add additional question elements to your desired quiz xml file. It will
+      automatically get
+      rendered in the dialog box. Likewise to remove questions you may do so by
+      removing them from the quiz xml file. You can also create and display additional quizzes following the same xml
+      structure provided by the other ones.
+
+    </p>
+
+    <h3>Access application</h3>
+    <p>
+      You can access the application from the top navigation bar as well.<br />
+      <a href="part2/tutorial.html">Tutorial App</a>
+    </p>
+
+  </div>
+  <hr>
+  <div class="documentation">
+    <h1>Part 3: Slideshow Application</h1>
+    <h3>Description and Requirements</h3>
+    <p>
+      I created a slideshow application that would allow users to switch between pictures manually or you could let it
+      play automatically. You can pick a transition effect and you can decide wether to show the pictures in order or
+      random. Here is the breakdown of the requirements: <br />
+    <ul>
+      <li>
+        Manual transition buttons
+      </li>
+      <li>
+        Pause and play toggle button
+      </li>
+      <li>
+        Select dropdown between random or sequential
+      </li>
+      <li>
+        Select dropdown between three different transition effects
+      </li>
+      <li>
+        Display image captions
+      </li>
+      <li>
+        Disable manual transition when random transition is selected.
+      </li>
+      <li>
+        Prepare 20 images
+      </li>
+      <li>
+        Use HTML5 Canvas
+      </li>
+    </ul>
+
+    </p>
+
+    <h3>Analysis and Design</h3>
+    <p>
+      Since a slideshow is a very graphical app (A lot of graphical elements and less texts), I begun my design with a
+      wireframe to plan the layout of the application (Fig4).
+    <div class="figure">
+      <img style="margin:10px auto;" src="shared/images/part1/assignment1-slideshow-wireframe.png"
+        alt="tree-diagram-xml" width="50%">
+
+      <span>Fig4: Slideshow wireframe</span>
+    </div>
+    I used 20 appropriate photos to display on the slideshow.
+
+    </p>
+
+
+
+    <h3>Implementation</h3>
+    <p>
+      I implemented my user interface to closely follow the wireframe, with some additional improvements for better
+      functionality, ofcourse. I carefully mapped my manual control buttons as a fading in/out ovarlay onto the canvas
+      surface. My slideshow logic and Javascript were constrained by the use of canvas. I first would
+      scale and draw my images onto the canvas according to the canvas height and width.
+      I implemented the fade transition effect by adjusting the opacity of the images as they would fade out or fade in.
+      I implemented the slide transition by gradually drawing parts of the next image onto the current one.
+      Random transitions were handled by selecting a random index out of the array of image JS objects. I used
+      Math.random() to generate the random values and then multiplied the random number by the number of images to get a
+      value that would corrospond to an index of the image array.
+    </p>
+    <h3>User Guide</h3>
+    <p>
+      For additional implementation details, you may look at the source code which has been provided according to the
+      project directory slayout requirements detailed in the assignment.
+      The source code for the slideshow may be accessed within the directory "part3/" of the assignment folder. <br>
+      <bold>To manually control the transitions hover over the images to reveal the controls.</bold>
+
+    </p>
+
+    <h3>Access application</h3>
+    <p>
+      You can access the application from the top navigation bar as well.<br />
+      <a href="part3/slideshow.html">Slideshow</a>
+    </p>
+  </div>
   <hr />
+
+  <div class="documentation">
+    <h1>Part 4: Utility Application</h1>
+    <h3>Description and Requirements</h3>
+    <p>
+      I created the utility application to have a measurement converter, a mortgage calculator and a todo list. The
+      breakdown of the requirements is as follows:
+    <ul>
+      <li>
+        Create a measurement converter (Area, weight, length, volume)
+      </li>
+      <li>
+        Create a mortgage calculator
+      </li>
+      <li>
+        Make a cusomt utility application (I chose todo list):
+        <ul>
+          <li>
+            Ability to add an item
+          </li>
+          <li>
+            Ability to mark an item as done
+          </li>
+          <li>
+            Ability to remove an item
+          </li>
+          <li>
+            Ability to clear list
+          </li>
+        </ul>
+      </li>
+      <li>
+        Use AJAX for transitions between utility apps and better efficiency.
+      </li>
+    </ul>
+    </p>
+
+    <h3>Analysis and Design</h3>
+    <p>
+      This application had both profound graphical and logical requirements. I begun the process with creating a
+      wireframe for my application (Fig5).
+    <div class="figure">
+      <img style="margin:10px auto;" src="shared/images/part1/assignment1-utility-wireframe.png" alt="tree-diagram-xml"
+        width="50%">
+
+      <span>Fig5: Utility app wireframe</span>
+    </div>
+    Currently, I'm only displaying the measurement converter design. However, other utilities also follow a similar
+    structure. I wanted everything to be contained in a structured box with navigation bottons at the top.
+    When designing my measurement converter's logic, I considered having a base measurement unit to convert to when
+    converting between measurements. Instead of having every possible combination of conversion between unitsP
+    , which would make the code extremely lengthy. For instance, I considered having meters as my base unit for length
+    conversion. Therefore, when I want to convert feet to inches I would follow the following data flow transition: <br>
+    ft --> m --> in <br>
+    This will reduce the amount of code I need to have since I do not need a separate conversion logic for ft --> in as
+    I would already have the logic for ft --> m and m --> in.
+    </p>
+
+    <h3>Implementation</h3>
+    <p>
+      I used AJAX calls to load different utility apps into the page using the navigation buttons. I also incorporate
+      jQuery to simplify the AJAX procedure. I used switch case statements to handle the different conversion scenarios,
+      and I incorporated my previously described design for the conversion logic to reduce the number of switch cases
+      required.
+      To detect when a conversion is requested I used html form to handle the submission. Forms allows us to detect when
+      the
+      user presses the submit button and when the user presses enter indicating submission.
+      Form elements were used for the mortgage calculator and todo list as well.
+      Mortgage calculator was implemented with considering annual interest rate and outputting the required monthly
+      payment.
+      The number of characters in a todo list item were limited to 55 characters to sustain a neat and clean user
+      interface.
+      Error handling was done to ensure no empty fields or improper characters are entered.
+    </p>
+    <h3>User Guide</h3>
+    <p>
+      For additional implementation details, you may look at the source code which has been provided according to the
+      project directory layout requirements detailed in the assignment.
+      The source code for the slideshow may be accessed within the directory "part4/" of the assignment folder. <br>
+      <bold>For the measurement converter:</bold><br>
+      Enter a value in the initial input field. You may select your initial and target units, along with the type of
+      measurement (area, weight, volume or length) using the provided dropdown menus. Once done press enter and the
+      resulting conversion will be displayed.<br>
+      <bold>For the mortgage calculator:</bold><br>
+      Fill in all the input fields and once you are done you may press enter or click on the submit button. The
+      resulting monthly payment will be displayed under the submit button.<br>
+      <bold>For the todo list:</bold><br>
+      Enter your todo item in the input field. Then either press enter or click on the add button. This will display the
+      todo item along with options to delete or check it as done. You may also clear the list using the "New List"
+      button.<br>
+
+    </p>
+    <h3>Access application</h3>
+    <p>
+      You can access the application from the top navigation bar as well.<br />
+      <a href="part4/utility.html">Utility App</a>
+    </p>
+  </div>
 </body>
 
 </html>
