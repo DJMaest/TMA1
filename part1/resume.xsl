@@ -6,6 +6,7 @@
 			<head>
 				<meta charset="utf-8" />
 				<link rel="stylesheet" type="text/css" href="../shared/main.css" />
+				<title>Resume</title>
 			</head>
 			<body>
 				<div class="topnav">
