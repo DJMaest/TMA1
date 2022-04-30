@@ -23,7 +23,7 @@
 		<answer>a</answer>
 	</question>
 	<question>
-		<text>XSL is used define the layout of an XML document in the browser.</text>
+		<text>XSL is used to define the layout of an XML document in the browser.</text>
 		<a>True</a>
 		<b>False</b>
 		<answer>a</answer>

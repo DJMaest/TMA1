@@ -26,10 +26,10 @@ function ColorCodeAnswer(index, answer, status) {
     let statusColor = ""
     switch (status) {
         case "correct":
-            statusColor = "#b90505";
+            statusColor = "#29a629";
             break;
         case "incorrect":
-            statusColor = "#29a629";
+            statusColor = "#b90505";
             break;
         default:
             break;
