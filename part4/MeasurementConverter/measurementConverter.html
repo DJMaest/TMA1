@@ -5,8 +5,10 @@
     <option value="length">Length</option>
     <option value="weight">Weight</option>
 </select>
-<input id="initialValue" name="initialVale" type="number" value="0" min="0">
-<select id="initialUnit"></select> 
-<strong>=</strong> 
-<input id="targetValue" name="targetValue" type="number" value="0" min="0" disabled>
+<!--Input only accepts non negative values-->
+<input class="calc-input" id="initialValue" name="initialVale" type="number" value="0" min="0"
+    oninput="isValidCalcInput(value, validity)||(value='');">
+<select id="initialUnit"></select> <br>
+<strong style="font-size: 2em;">=</strong>
+<input class="calc-input" id="targetValue" name="targetValue" type="number" value="0" min="0" disabled>
 <select id="targetUnit"></select>

@@ -241,8 +241,8 @@ function handleMortgageListeners() {
             const monthlyInterest = interest / (12 * 100);
             const principal = price - downPayment;
             const monthly = (principal * (monthlyInterest * Math.pow(monthlyInterest + 1, months))) / (Math.pow((1 + monthlyInterest), months) - 1);
-            console.log(monthly);
-            paymentLabel.text(monthly);
+
+            paymentLabel.text(monthly.toFixed(1));
         })
 
     });
@@ -256,6 +256,10 @@ function handleToDoList() {
         const newListBtn = $("#newList");
         addItem.submit((e) => {
             e.preventDefault()
+            if (item.val() == "") {
+                alert("Input field is empty!");
+                return;
+            }
             listItems.append(`
             <div class="list-item" id="container-${todoIndex}">
                 <input class="list-checkbox" type="checkbox" id="done-${todoIndex}"><span class="item-content" id="item-${todoIndex}">${item.val()}</span> <input class="delete-item" id="delete-${todoIndex}" type="image" src="./images/delete-icon.png" />
@@ -290,6 +294,15 @@ function handleToDoList() {
         });
 
     });
+}
+
+function isValidCalcInput(value, validity) {
+    if (value == Math.abs(value) && validity.valid) {
+        return true;
+
+    }
+    alert("Invalid Entry Detected! Ensure all fields are non negative values.");
+    return false;
 }
 
 window.onload = () => {

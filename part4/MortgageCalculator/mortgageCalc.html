@@ -1,16 +1,21 @@
 <h1>Mortgage Calculator</h1>
 <div>
+    <!--Inputs only accept non negative values-->
     <form id="mortgageForm">
         <label><strong>Home Price</strong></label>
-        <input class="calc-input" id="price" name="price" type="number" value="0" step="any">
+        <input class="calc-input" id="price" name="price" type="number" value="0" step="any"
+            oninput="isValidCalcInput(value, validity)||(value='');">
         <label><strong>Down Payment</strong></label>
-        <input class="calc-input"  id="downPayment" name="downPayment" type="number" value="0" step="any">
+        <input class="calc-input" id="downPayment" name="downPayment" type="number" value="0" step="any"
+            oninput="isValidCalcInput(value, validity)||(value='');">
         <label><strong>Period (Years)</strong></label>
-        <input class="calc-input" id="period" name="period" type="number" value="0" step="any">
+        <input class="calc-input" id="period" name="period" type="number" value="0" step="any"
+            oninput="isValidCalcInput(value, validity)||(value='');">
         <label><strong>Annual Interest Rate</strong></label>
-        <input class="calc-input" id="interest" name="interest" type="number" value="0" step="any"> 
-        <input type="submit" value="calculate" class="calculate-btn"/>
+        <input class="calc-input" id="interest" name="interest" type="number" value="0" step="any"
+            oninput="isValidCalcInput(value, validity)||(value='');">
+        <input type="submit" value="calculate" class="calculate-btn" />
     </form>
     <label><strong>Monthly Payment: </strong></label><span id="monthlyPayment">0</span><span> $</span>
-    
+
 </div>
