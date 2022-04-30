@@ -547,10 +547,20 @@
       user presses the submit button and when the user presses enter indicating submission.
       Form elements were used for the mortgage calculator and todo list as well.
       Mortgage calculator was implemented with considering annual interest rate and outputting the required monthly
-      payment.
+      payment. I obtain the value using the following set of equations: <br>
+
+      <bold>
+        Principal = Price - Down_Payment <br>
+        Monthly_Interest = Annual_Interest/12 <br>
+        Monthly_Payment = (Principal * (monthlyInterest * ( Monthly_Interest + 1 )^(Months))) / ( ( Monthly_Interest + 1
+        )^(Months) - 1)<br>
+      </bold>
+
       The number of characters in a todo list item were limited to 55 characters to sustain a neat and clean user
       interface.
-      Error handling was done to ensure no empty fields or improper characters are entered.
+      Error handling was done to ensure no empty fields or improper characters are entered.<br/>
+      To handle the measurement conversion, I looked up the corrosponding factors using google's measurement converter
+      tool that easily shows up during google searches.
     </p>
     <h3>User Guide</h3>
     <p>
