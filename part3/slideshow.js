@@ -3,7 +3,7 @@ const previousBtn = document.getElementById("previousBtn");
 const context = document.getElementById("slideshowCanvas").getContext("2d");
 context.imageSmoothingEnabled = true;
 const caption = document.getElementById("imageCaption");
-const playBtn= document.getElementById("playBtn");
+const playBtn = document.getElementById("playBtn");
 const playBtnContainer = document.getElementById("");
 const showToggle = document.getElementById("showToggle");
 const transitionEffect = document.getElementById("transitionEffect");
@@ -19,13 +19,29 @@ var alpha = 0,   /// current alpha value
     isRandom = false,
     effect = "none";
 const images = [
-    { path: "../shared/images/screen1.png", caption: "screen-1" },
-    { path: "../shared/images/screen2.png", caption: "screen-2" },
-    { path: "../shared/images/screen3.png", caption: "screen-3" },
-    { path: "../shared/images/screen4.png", caption: "screen-4" },
-    { path: "../shared/images/screen5.png", caption: "screen-5" },
+    { path: "../shared/images/part3/image-8.png", caption: "Edmonton balcony view at night" },
+    { path: "../shared/images/part3/image-7.png", caption: "Edmonton at night" },
+    { path: "../shared/images/part3/image-1.png", caption: "Casper on a circle" },
+    { path: "../shared/images/part3/image-2.png", caption: "Casper and fruites" },
+    { path: "../shared/images/part3/image-3.png", caption: "Casper peaking" },
+    { path: "../shared/images/part3/image-4.png", caption: "Casper on the sofa" },
+    { path: "../shared/images/part3/image-5.png", caption: "Embeded systems project" },
+    { path: "../shared/images/part3/image-6.png", caption: "Persian new year table" },
+    { path: "../shared/images/part3/image-9.png", caption: "Skiing at snow valley resort" },
+    { path: "../shared/images/part3/image-10.png", caption: "Sunset at Elk island" },
+    { path: "../shared/images/part3/image-11.png", caption: "Commute Bike" },
+    { path: "../shared/images/part3/image-12.png", caption: "Outdoor barbeque" },
+    { path: "../shared/images/part3/image-13.png", caption: "Northern Alberta Jubilee" },
+    { path: "../shared/images/part3/image-14.png", caption: "Lego Night" },
+    { path: "../shared/images/part3/image-15.png", caption: "Japanese BBQ" },
+    { path: "../shared/images/part3/image-16.png", caption: "Ethiopian cuisine" },
+    { path: "../shared/images/part3/image-17.png", caption: "Skiing helment and goggles" },
+    { path: "../shared/images/part3/image-18.png", caption: "Bookshelf" },
+    { path: "../shared/images/part3/image-19.png", caption: "Gaming PC" },
+    { path: "../shared/images/part3/image-20.png", caption: "Skiing set" },
+
 ];
-const { dWidth, dHeight } = { dWidth: 800, dHeight: 600 };
+const { dWidth, dHeight } = { dWidth: 800, dHeight: 900 };
 displayImage(); // display default image
 
 function setRandomIndex() {
@@ -163,13 +179,13 @@ previousBtn.addEventListener("click", () => {
     isPlaying && setDisplayInterval();
 });
 
-playBtn.addEventListener("mouseenter", ()=>{
-    document.getElementsByClassName("toggle-play-btn")[0].src = isPlaying? "../shared/icons/pause.png":"../shared/icons/play.png";
+playBtn.addEventListener("mouseenter", () => {
+    document.getElementsByClassName("toggle-play-btn")[0].src = isPlaying ? "../shared/icons/pause.png" : "../shared/icons/play.png";
 });
 
 playBtn.addEventListener("click", () => {
     isPlaying = !isPlaying;
-    document.getElementsByClassName("toggle-play-btn")[0].src = isPlaying? "../shared/icons/pause.png":"../shared/icons/play.png";
+    document.getElementsByClassName("toggle-play-btn")[0].src = isPlaying ? "../shared/icons/pause.png" : "../shared/icons/play.png";
 
     if (isPlaying) {
         setDisplayInterval();
@@ -186,13 +202,13 @@ playBtn.addEventListener("click", () => {
 showToggle.addEventListener("change", (e) => {
     const val = e.target.value;
     if (val === "random") {
-        nextBtn.style.display="none";
-        previousBtn.style.display="none";
+        nextBtn.style.display = "none";
+        previousBtn.style.display = "none";
         isRandom = true;
     } else {
         isRandom = false;
-        nextBtn.style.display="";
-        previousBtn.style.display="";
+        nextBtn.style.display = "";
+        previousBtn.style.display = "";
     }
 
 });

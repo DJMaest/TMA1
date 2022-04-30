@@ -5,7 +5,6 @@
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<meta charset="utf-8" />
-				<link rel="stylesheet" type="text/css" href="../shared/resume.css" />
 				<link rel="stylesheet" type="text/css" href="../shared/main.css" />
 			</head>
 			<body>

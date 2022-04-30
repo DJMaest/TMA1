@@ -3,7 +3,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 96px;
+    width: 200px;
     z-index: 2;
     opacity: 1;
     color: blanchedalmond;
@@ -17,8 +17,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 75px;
-    height: 75px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     z-index: 2;
     opacity: 0;
@@ -85,25 +85,26 @@
 .canvas-container {
     position: relative;
     width: 800px;
-    height: 600px;
+    height: 900px;
     padding: 5px;
     border-style: solid;
     border-width: 5px;
     border-radius: 2%;
     border-color: #2D4263;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -60%);
+    margin: 50px auto;
 }
 
 .outer-container {
     position: relative;
-    width: 1000px;
-    height: 800px;
+    width: 800px;
+    height: 1200px;
     text-align: center;
     padding: 5px;
     margin: auto;
 
+}
+.outer-container h1 {
+    margin-bottom: 0;
 }
 
 .caption {
@@ -120,7 +121,7 @@
     text-align: center;
     background-color: black;
     opacity: 0.5;
-    width: 120px;
+    width: 350px;
     height: 30px;
 }
 
@@ -130,8 +131,8 @@
     overflow: hidden;
     background: #cccccc;
     border: 1px solid #cccccc;
-    margin:5px;
-    padding:2px;
+    margin: 5px;
+    padding: 2px;
 }
 
 .select-box {
