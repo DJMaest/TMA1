@@ -41,7 +41,7 @@ const images = [
     { path: "../shared/images/part3/image-20.png", caption: "Skiing set" },
 
 ];
-const { dWidth, dHeight } = { dWidth: 800, dHeight: 900 };
+const { dWidth, dHeight } = { dWidth: 800, dHeight: 800 };
 displayImage(); // display default image
 
 function setRandomIndex() {
@@ -64,6 +64,13 @@ function setDisplayInterval() {
     }, timeout);
 }
 
+function setImageCaption(img){
+    img.src = images[imageIndex].path;
+    img.caption = images[imageIndex].caption;
+    img.caption = `Image ${imageIndex + 1}: ${images[imageIndex].caption}`;
+    caption.innerHTML = `Image ${imageIndex + 1}: ${images[imageIndex].caption}`;
+}
+
 function doSlideTransition() {
     context.globalAlpha = 1.0
     widthInterval += widthDelta;
@@ -72,9 +79,7 @@ function doSlideTransition() {
         return;
     }
     const img = new Image();
-    img.src = images[imageIndex].path;
-    img.caption = images[imageIndex].caption;
-    caption.innerHTML = images[imageIndex].caption;
+    setImageCaption(img)
     img.addEventListener("load", () => {
 
         context.drawImage(img, 0, 0, img.width, img.height, -dWidth + widthInterval, 0, dWidth, dHeight);
@@ -88,9 +93,7 @@ function doFadeTransition() {
     alpha += delta;
     if (alpha > 1) return;
     const img = new Image();
-    img.src = images[imageIndex].path;
-    img.caption = images[imageIndex].caption;
-    caption.innerHTML = images[imageIndex].caption;
+    setImageCaption(img)
     context.globalAlpha = alpha;
     img.addEventListener("load", () => {
 
@@ -110,9 +113,7 @@ function displayImage() {
             context.clearRect(0, 0, context.canvas.width, context.canvas.height);
             context.beginPath();
             const img = new Image();
-            img.src = images[imageIndex].path;
-            img.caption = images[imageIndex].caption;
-            caption.innerHTML = images[imageIndex].caption;
+            setImageCaption(img)
             img.addEventListener("load", () => {
 
                 context.drawImage(img, 0, 0, img.width, img.height, 0, 0, dWidth, dHeight);
@@ -144,9 +145,7 @@ function displayImage() {
 nextBtn.addEventListener("click", () => {
     if (effect === "slide") {
         const img = new Image();
-        img.src = images[imageIndex].path;
-        img.caption = images[imageIndex].caption;
-        caption.innerHTML = images[imageIndex].caption;
+        setImageCaption(img)
         img.addEventListener("load", () => {
 
             context.drawImage(img, 0, 0, img.width, img.height, 0, 0, dWidth, dHeight);
@@ -163,9 +162,7 @@ nextBtn.addEventListener("click", () => {
 previousBtn.addEventListener("click", () => {
     if (effect === "slide") {
         const img = new Image();
-        img.src = images[imageIndex].path;
-        img.caption = images[imageIndex].caption;
-        caption.innerHTML = images[imageIndex].caption;
+        setImageCaption(img)
         img.addEventListener("load", () => {
 
             context.drawImage(img, 0, 0, img.width, img.height, 0, 0, dWidth, dHeight);

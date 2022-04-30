@@ -1,54 +1,4 @@
-.info-table{
-  margin: 10px auto;
-  font-size: 1.2em;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #2D4263;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #C84B31;
-  color: white;
-}
-
-.heading{
-  text-align: center;
-}
-
-.documentation{
-  padding:10px 75px;
-}
-
-.figure{
-  text-align: center;
-  width: 100%;
-}
-.figure span{
-  width: 300px;
-  margin: auto;
-  display:block;
-}
-
+/* General CSS  */
 body {
   background-color: #ECDBBA;
   font-family: Arial, Helvetica, sans-serif;
@@ -74,11 +24,11 @@ hr {
   margin: 2px;
 }
 
-bold{
+bold {
   font-weight: bold;
 }
 
-ul{
+ul {
   padding: 15px;
 }
 
@@ -90,4 +40,506 @@ code {
   background-color: #f2f2f2;
   margin: 10px 0;
   white-space: pre-line;
+}
+
+
+/* Documentation and Landing Page CSS */
+.info-table {
+  margin: 10px auto;
+  font-size: 1.2em;
+}
+
+.heading {
+  text-align: center;
+}
+
+.documentation {
+  padding: 10px 75px;
+}
+
+.figure {
+  text-align: center;
+  width: 100%;
+}
+
+.figure span {
+  width: 300px;
+  margin: auto;
+  display: block;
+}
+
+/* Navbar CSS */
+.topnav {
+  background-color: #2D4263;
+  overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #C84B31;
+  color: white;
+}
+
+/* Tutorial CSS */
+.tutorial-container {
+  width: 900px;
+  height: 1000px;
+  margin: 10px auto;
+  text-align: center;
+  border: 5px solid #666666;
+  border-radius: 25px;
+
+}
+
+.content {
+  text-align: left;
+  padding: 10px;
+}
+
+.tutorial-section {
+  overflow-y: scroll;
+  height: 900px;
+  padding: 10px;
+
+}
+
+.tutorial-btn {
+  background-color: #8B9A46;
+  color: white;
+  width: 100px;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.tutorial-btn:hover {
+  background-color: #b5c761;
+}
+
+.tutorial-btn:disabled {
+  background-color: #c8c8c8;
+  cursor: default;
+}
+
+.quiz-btn {
+  background-color: #d60404;
+  color: white;
+  width: 200px;
+  height: 100px;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: large;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 20px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  text-align: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px;
+  height: 600px;
+}
+
+#quizTitle h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.scroll-container {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+#quizContent {
+
+
+  text-align: left;
+}
+
+#quizContent hr {
+  margin: 5px 0;
+}
+
+#quizContent p {
+  margin: 0px;
+}
+
+.submit-btn {
+  position: relative;
+  background-color: #8B9A46;
+  color: white;
+  width: 100px;
+  padding: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.submit-btn:hover {
+  background-color: #b5c761;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background-color: #FF0000;
+}
+
+
+/* Slideshow CSS */
+.toggle-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  z-index: 2;
+  opacity: 1;
+  color: blanchedalmond;
+  opacity: 1;
+  cursor: pointer;
+
+}
+
+.play-pause-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.play-pause-container:hover {
+  opacity: 1;
+}
+
+.next-btn-container {
+  position: absolute;
+  padding: 0 10px;
+  left: 95%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  background-color: black;
+  cursor: pointer;
+}
+
+.next-btn-container:hover {
+  opacity: 0.5;
+}
+
+.next-image-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.previous-btn-container {
+  position: absolute;
+  padding: 0 10px;
+  left: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  background-color: black;
+  cursor: pointer;
+}
+
+.previous-btn-container:hover {
+  opacity: 0.5;
+}
+
+
+
+.previous-image-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.canvas-container {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  padding: 5px;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 2%;
+  border-color: #2D4263;
+  margin: 50px auto;
+}
+
+.outer-container {
+  position: relative;
+  width: 800px;
+  height: 1200px;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+
+}
+
+.outer-container h1 {
+  margin-bottom: 0;
+}
+
+.caption {
+
+  color: #ECDBBA;
+
+}
+
+.caption-container {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -90%);
+  text-align: center;
+  background-color: black;
+  opacity: 0.5;
+  width: 350px;
+  height: 30px;
+}
+
+.select-wrapper {
+  border-radius: 36px;
+  display: inline-block;
+  overflow: hidden;
+  background: #cccccc;
+  border: 1px solid #cccccc;
+  margin: 5px;
+  padding: 2px;
+}
+
+.select-box {
+  width: 250px;
+  height: 40px;
+  border: 0px;
+  background: #cccccc;
+  outline: none;
+}
+
+.controls {
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+/* Utitlity CSS */
+.calc-input {
+  display: block;
+  margin: 10px auto;
+  width: 300px;
+  height: 25px;
+  border: 1px solid #666666;
+  border-radius: 25px;
+}
+
+.calc-input:focus {
+  outline: none;
+}
+
+.calculation-box {
+  text-align: center;
+  height: 100%;
+}
+
+
+.input-item {
+  width: 300px;
+  height: 25px;
+  border: 1px solid #666666;
+  border-radius: 36px;
+}
+
+.input-item:focus {
+  outline: none;
+}
+
+.utility-container {
+  width: 600px;
+  height: 600px;
+  margin: 5% auto;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 36px;
+  padding: 5px;
+
+}
+
+.utility-button {
+  font-size: 15px;
+  font-family: Arial;
+  width: 110px;
+  height: 40px;
+  border-width: 1px;
+  color: #fff;
+  border-color: #84bbf3;
+  font-weight: bold;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  text-shadow: inset 0px 1px 0px #528ecc;
+  background: linear-gradient(#79bbff, #378de5);
+  margin: auto 2px;
+}
+
+.utility-button:hover {
+  background: linear-gradient(#378de5, #79bbff);
+}
+
+.utility-button[disabled] {
+  border: 1px solid #999999;
+  background: linear-gradient(#cccccc, #cccccc);
+  color: #666666;
+}
+
+
+
+.calculate-btn {
+  font-size: 15px;
+  font-family: Arial;
+  width: 140px;
+  height: 50px;
+  border-width: 1px;
+  color: #fff;
+  border-color: #3b6e22;
+  font-weight: bold;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: inset 0px 1px 0px 0px #9acc85;
+  background: linear-gradient(#74ad5a, #68a54b);
+  margin: 10px;
+}
+
+.calculate-btn:hover {
+  background: linear-gradient(#68a54b, #74ad5a);
+}
+
+.list-container {
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.list-item {
+  border: 1px solid #999999;
+  background-color: #ECDBBA;
+  border-radius: 36px;
+  width: 500px;
+  margin: 5px auto;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.list-checkbox {
+  flex-basis: 25px;
+  height: 20px;
+}
+
+.item-content {
+  flex-basis: 450px;
+  text-align: left;
+  margin: auto;
+  color: #2D4263;
+}
+
+.delete-item {
+  flex-basis: 25px;
+  padding: 2px;
+  /* width:16px;
+  height:26px;
+  padding:2px; */
+}
+
+/* General Scrollbar CSS */
+::-webkit-scrollbar {
+  opacity: 0;
+  width: 8px;
+  height: 80%;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #666666;
+  border-radius: 20px;
+  height: 80%;
 }
