@@ -266,7 +266,7 @@ function handleToDoList() {
             }
             listItems.append(`
             <div class="list-item" id="container-${todoIndex}">
-                <input class="list-checkbox" type="checkbox" id="done-${todoIndex}"><span class="item-content" id="item-${todoIndex}">${item.val()}</span> <input class="delete-item" id="delete-${todoIndex}" type="image" src="./images/delete-icon.png" />
+                <input class="list-checkbox" type="checkbox" id="done-${todoIndex}"><span class="item-content" id="item-${todoIndex}">${item.val()}</span> <input class="delete-item" id="delete-${todoIndex}" type="image" src="../shared/images/part4/delete-icon.png" />
             </div>`);
             const itemSelect = $(`#done-${todoIndex}`);
             itemSelect.on('click', () => {
