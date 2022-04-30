@@ -241,8 +241,12 @@ function handleMortgageListeners() {
             const monthlyInterest = interest / (12 * 100);
             const principal = price - downPayment;
             const monthly = (principal * (monthlyInterest * Math.pow(monthlyInterest + 1, months))) / (Math.pow((1 + monthlyInterest), months) - 1);
-
+            if (isNaN(monthly)) {
+                alert("Unable to calculate monthly payment! Please double check your entries.");
+                return;
+            }
             paymentLabel.text(monthly.toFixed(1));
+            $("#monthlyVal").show();
         })
 
     });
